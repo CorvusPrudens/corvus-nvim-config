@@ -35,6 +35,8 @@ return {
         		-- add any options here
     		},
     		lazy = false,
-	}
+	},
+	"chaoren/vim-wordmotion",
+	"elentok/format-on-save.nvim",
 }
 

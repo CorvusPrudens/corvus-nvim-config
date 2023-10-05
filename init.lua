@@ -48,7 +48,7 @@ rt.setup({
   },
 })
 
--- LSP Diagnostics Options Setup 
+-- LSP Diagnostics Options Setup
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {
     texthl = opts.name,
@@ -80,7 +80,7 @@ vim.cmd([[
 set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
-     
+
 -- Completion Plugin Setup
 local cmp = require'cmp'
 cmp.setup({
@@ -112,7 +112,7 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
     { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'buffer', keyword_length = 2 },        -- source current buffer
-    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
+    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
     { name = 'calc'},                               -- source for math calculation
   },
   window = {
@@ -143,6 +143,30 @@ require('Comment').setup()
 -- Imports
 require('keys') -- Keymaps
 
+local formatters = require("format-on-save.formatters")
+require('format-on-save').setup({
+  experiments = {
+    partial_update = 'diff', -- or 'line-by-line'
+  },
+  fallback_formatter = {
+    formatters.remove_trailing_whitespace,
+    formatters.remove_trailing_newlines,
+    -- formatters.prettierd,
+  },
+  formatter_by_ft = {
+      markdown = formatters.prettierd,
+      rust = formatters.lsp,
+      yaml = formatters.prettierd,
+  }
+})
+
 vim.cmd([[
 set number
+set shiftwidth=4
+set tabstop=4
+set list
+set expandtab
+set smartindent
+Trouble
+NvimTreeOpen
 ]])
