@@ -172,6 +172,24 @@ require('neoscroll.config').set_mappings(t)
 require('satellite').setup()
 require("better_escape").setup()
 
+-- Treesitter Plugin Setup
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "lua", "rust", "toml" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting=false,
+  },
+  ident = { enable = true },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  }
+}
+
+require('tabout').setup()
+
 vim.cmd([[
 set number
 set shiftwidth=4

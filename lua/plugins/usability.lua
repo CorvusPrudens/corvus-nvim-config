@@ -41,4 +41,6 @@ return {
     "karb94/neoscroll.nvim",
     "lewis6991/satellite.nvim",
     "max397574/better-escape.nvim",
+    "/nvim-treesitter/nvim-treesitter",
+    "abecodes/tabout.nvim",
 }
