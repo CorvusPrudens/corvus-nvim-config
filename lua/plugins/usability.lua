@@ -40,4 +40,5 @@ return {
 	"elentok/format-on-save.nvim",
     "karb94/neoscroll.nvim",
     "lewis6991/satellite.nvim",
+    "max397574/better-escape.nvim",
 }

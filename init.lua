@@ -170,6 +170,7 @@ t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '200', [['cubic']]}}
 
 require('neoscroll.config').set_mappings(t)
 require('satellite').setup()
+require("better_escape").setup()
 
 vim.cmd([[
 set number
