@@ -1,6 +1,6 @@
 return {
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{ 
+	{
 		"windwp/nvim-autopairs",
           	event = "InsertEnter",
     		opts = {} -- this is equalent to setup({}) function
@@ -38,5 +38,6 @@ return {
 	},
 	"chaoren/vim-wordmotion",
 	"elentok/format-on-save.nvim",
+    "karb94/neoscroll.nvim",
+    "lewis6991/satellite.nvim",
 }
-

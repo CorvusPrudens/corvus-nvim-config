@@ -160,6 +160,17 @@ require('format-on-save').setup({
   }
 })
 
+require('neoscroll').setup({
+})
+
+local t = {}
+-- Syntax: t[keys] = {function, {function arguments}}
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '200', [['cubic']]}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '200', [['cubic']]}}
+
+require('neoscroll.config').set_mappings(t)
+require('satellite').setup()
+
 vim.cmd([[
 set number
 set shiftwidth=4
@@ -167,6 +178,5 @@ set tabstop=4
 set list
 set expandtab
 set smartindent
-Trouble
 NvimTreeOpen
 ]])
