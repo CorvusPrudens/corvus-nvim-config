@@ -43,4 +43,7 @@ return {
     "max397574/better-escape.nvim",
     "/nvim-treesitter/nvim-treesitter",
     "abecodes/tabout.nvim",
+    "nvim-lua/plenary.nvim",
+    "BurntSushi/ripgrep",
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.3' },
 }
