@@ -46,4 +46,15 @@ return {
     "nvim-lua/plenary.nvim",
     "BurntSushi/ripgrep",
     { 'nvim-telescope/telescope.nvim', tag = '0.1.3' },
+    "akinsho/bufferline.nvim",
+    "nmac427/guess-indent.nvim",
+    -- "Shatur/neovim-session-manager",
+    "nvim-lualine/lualine.nvim",
+    {
+      'stevearc/oil.nvim',
+      branch = "stevearc-trash",
+      opts = {},
+      -- Optional dependencies
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 }

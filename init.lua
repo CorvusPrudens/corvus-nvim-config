@@ -157,6 +157,8 @@ require('format-on-save').setup({
       markdown = formatters.prettierd,
       rust = formatters.lsp,
       yaml = formatters.prettierd,
+      typescript = formatters.prettierd,
+      typescriptreact = formatters.prettierd,
   }
 })
 
@@ -196,6 +198,47 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+require('bufferline').setup{
+    options = {
+        offsets = {{
+            filetype = "NvimTree"
+        }},
+        hover = {
+            enabled = true,
+            delay = 200,
+            reveal = {'close'}
+        },
+        groups = {
+            items = {
+                 require('bufferline.groups').builtin.pinned:with({ icon = "" })
+            }
+        }
+    }
+}
+
+-- require("onedark").setup({})
+-- vim.cmd.colorscheme = 'onedark'
+-- require('session_manager').setup({})
+require('lualine').setup{
+    options = {
+        theme = 'onedark'
+    }
+}
+
+require("oil").setup({
+    columns = {
+      "icon",
+      -- "permissions",
+      -- "size",
+      -- "mtime",
+    },
+    delete_to_trash = true,
+    skip_confirm_for_simple_edits = true,
+    view_options = {
+        show_hidden = true,
+    },
+})
+
 vim.cmd([[
 set number
 set shiftwidth=4
@@ -203,5 +246,9 @@ set tabstop=4
 set list
 set expandtab
 set smartindent
+set mousemoveevent
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+nnoremap <leader>q :bd<bar>bn<CR>
 NvimTreeOpen
 ]])
