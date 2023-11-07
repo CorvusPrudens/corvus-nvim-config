@@ -156,6 +156,7 @@ require('format-on-save').setup({
   formatter_by_ft = {
       markdown = formatters.prettierd,
       rust = formatters.lsp,
+      python = formatters.lsp,
       yaml = formatters.prettierd,
       typescript = formatters.prettierd,
       typescriptreact = formatters.prettierd,
@@ -247,6 +248,7 @@ set list
 set expandtab
 set smartindent
 set mousemoveevent
+set relativenumber
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 nnoremap <leader>q :bd<bar>bn<CR>
